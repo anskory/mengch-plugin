@@ -23,6 +23,18 @@ export class emoticon extends plugin {
                 }, {
                     reg: "^#?懒羊羊",
                     fnc: 'lyy'
+                }, {
+                    reg: "^#?女装协议",
+                    fnc: 'nzxy'
+                }, {
+                    reg: "^#?(进|入)群协议",
+                    fnc: 'jqxy'
+                }, {
+                    reg: "^#?重拳出击",
+                    fnc: 'zqcj'
+                }, {
+                    reg: "^#?舔",
+                    fnc: 'tian'
                 },
             ]
         });
@@ -50,14 +62,29 @@ export class emoticon extends plugin {
         e.reply(await segment.image("https://api.caonm.net/api/lyy/l.php?qq=" + this.judgeAt(e)))
     }
 
+    async nzxy(e) {
+        e.reply(await segment.image("https://api.caonm.net/api/jqxy/n.php?qq" + this.judgeAt(e)))
+    }
+
+    async jqxy(e) {
+        e.reply(await segment.image("https://api.caonm.net/api/jqxy/j.php?qq=" + this.judgeAt(e)))
+    }
+
+    async zqcj(e) {
+        e.reply(await segment.image("https://api.caonm.net/api/hq/chui.php?qq=" + this.judgeAt(e)))
+    }
+
+    async tian(e) {
+        e.reply(await segment.image("https://api.caonm.net/api/tn/t.php?qq=" + this.judgeAt(e)))
+    }
+
 
     judgeAt(e) {
-        let qq = e.user_id
+        let qq;
         if (e.at != null) {
             qq = e.at;
-        }
-        if (e.self_id != null) {
-            qq = e.self_id
+        } else {
+            qq = e.user_id
         }
         return qq;
     }
