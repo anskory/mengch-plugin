@@ -27,8 +27,8 @@ export class emoticon extends plugin {
                     reg: "^#?女装协议",
                     fnc: 'nzxy'
                 }, {
-                    reg: "^#?(进|入)群协议",
-                    fnc: 'jqxy'
+                    // reg: "^#?(进|入)群协议",
+                    // fnc: 'jqxy'
                 }, {
                     reg: "^#?重拳出击",
                     fnc: 'zqcj'
@@ -66,9 +66,9 @@ export class emoticon extends plugin {
         e.reply(await segment.image("https://api.caonm.net/api/jqxy/n.php?qq" + this.judgeAt(e)))
     }
 
-    async jqxy(e) {
-        e.reply(await segment.image("https://api.caonm.net/api/jqxy/j.php?qq=" + this.judgeAt(e)))
-    }
+    // async jqxy(e) {
+    //     e.reply(await segment.image("https://api.caonm.net/api/jqxy/j.php?qq=" + this.judgeAt(e)))
+    // }
 
     async zqcj(e) {
         e.reply(await segment.image("https://api.caonm.net/api/hq/chui.php?qq=" + this.judgeAt(e)))
