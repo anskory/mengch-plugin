@@ -9,20 +9,20 @@ export class emoticon extends plugin {
             priority: 2000,
             rule: [
                 {
-                    reg: "^#?没色图了$",
+                    reg: "^#?没色图了",
                     fnc: 'mstl'
                 }, {
-                    reg: "^#?生无可恋$",
+                    reg: "^#?生无可恋",
                     fnc: 'swkl'
                 }, {
-                    reg: "^#?^我?是ikun$",
+                    reg: "^#?^(我)?是(ikun|爱坤)",
                     fnc: 'ikun'
                 }, {
-                    reg: "^#?^牌?杜蕾斯$",
-                    fnc: 'dls'
-                }, {
-                    reg: "^#?领取情侣证$",
+                    reg: "^#?领取情侣证",
                     fnc: 'mxbc'
+                }, {
+                    reg: "^#?懒羊羊",
+                    fnc: 'lyy'
                 },
             ]
         });
@@ -41,18 +41,23 @@ export class emoticon extends plugin {
         e.reply(await segment.image("https://api.caonm.net/api/txmb/7.php?qq=" + this.judgeAt(e)))
     }
 
-    async dls(e) {
-        e.reply(await segment.image("https://api.caonm.net/api/byt/b.php?qq=" + this.judgeAt(e)))
-    }
 
     async mxbc(e) {
         e.reply(await segment.image("https://api.caonm.net/api/mxbc/m.php?qq=" + this.judgeAt(e)))
     }
 
+    async lyy(e) {
+        e.reply(await segment.image("https://api.caonm.net/api/lyy/l.php?qq=" + this.judgeAt(e)))
+    }
+
+
     judgeAt(e) {
         let qq = e.user_id
         if (e.at != null) {
             qq = e.at;
+        }
+        if (e.self_id != null) {
+            qq = e.self_id
         }
         return qq;
     }
