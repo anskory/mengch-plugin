@@ -23,6 +23,13 @@ export const helpCfg = {
   }
 }
 
-export const helpList = []
+export const helpList = [{
+  group: '功能列表',
+  list: [{
+    icon: 52,
+    title: '#生无可恋',
+    desc: '制作表情包'
+  }]
+}]
 
 export const isSys = true
