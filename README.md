@@ -17,3 +17,6 @@ git clone https://gitee.com/anskory/mengch-plugin.git ./plugins/mengch-plugin/
 ## 使用说明
 
 发送指令`#檬橙帮助`即可获取功能菜单
+
+###其他
+* 特别鸣谢 [Earth-K-plugin](https://gitee.com/SmallK111407/earth-k-plugin) 提供的代码支持
